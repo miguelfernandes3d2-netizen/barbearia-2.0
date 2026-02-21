@@ -6,7 +6,6 @@
 <title>Barbearia Elite</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <style>
 
 * {
@@ -22,13 +21,13 @@ body {
   color: #fff;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 
 nav {
   position: fixed;
   width: 100%;
   top: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.95);
   padding: 15px 40px;
   display: flex;
   justify-content: space-between;
@@ -57,10 +56,10 @@ nav ul li a:hover {
   color: #c59d5f;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 header {
-  height: 100vh;
+  min-height: 100vh;
   background:
     linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
     url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1');
@@ -71,11 +70,11 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
+  padding: 120px 20px 60px; /* espaço pra navbar */
 }
 
 header h1 {
-  font-size: 3.5rem;
+  font-size: clamp(28px, 6vw, 56px);
   letter-spacing: 3px;
   text-transform: uppercase;
 }
@@ -83,6 +82,7 @@ header h1 {
 header p {
   margin-top: 15px;
   color: #ccc;
+  max-width: 500px;
 }
 
 .btn {
@@ -102,15 +102,17 @@ header p {
   transform: scale(1.05);
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
 
 section {
-  padding: 100px 20px;
+  padding: 80px 20px;
   max-width: 1100px;
   margin: auto;
   opacity: 0;
   transform: translateY(40px);
   transition: 0.8s ease;
+  scroll-margin-top: 100px;
+}
 }
 
 section.show {
@@ -122,10 +124,10 @@ h2 {
   text-align: center;
   margin-bottom: 40px;
   color: #c59d5f;
-  font-size: 2rem;
+  font-size: clamp(22px, 4vw, 32px);
 }
 
-/* SOBRE */
+/* ================= SOBRE ================= */
 
 .sobre p {
   text-align: center;
@@ -134,7 +136,7 @@ h2 {
   color: #ccc;
 }
 
-/* SERVIÇOS */
+/* ================= SERVIÇOS ================= */
 
 .grid {
   display: grid;
@@ -162,7 +164,7 @@ h2 {
   color: #ccc;
 }
 
-/* GALERIA */
+/* ================= GALERIA ================= */
 
 .gallery {
   display: grid;
@@ -172,6 +174,8 @@ h2 {
 
 .gallery img {
   width: 100%;
+  height: 250px;
+  object-fit: cover;
   border-radius: 12px;
   transition: 0.3s;
 }
@@ -180,7 +184,7 @@ h2 {
   transform: scale(1.05);
 }
 
-/* DEPOIMENTOS */
+/* ================= DEPOIMENTOS ================= */
 
 .depoimento {
   background: #181818;
@@ -189,11 +193,13 @@ h2 {
   text-align: center;
 }
 
-/* CONTATO */
+/* ================= CONTATO ================= */
 
 .contato {
   text-align: center;
 }
+
+/* ================= FOOTER ================= */
 
 footer {
   background: #111;
@@ -202,7 +208,7 @@ footer {
   color: #aaa;
 }
 
-/* BOTÃO WHATSAPP FIXO */
+/* ================= BOTÃO WHATSAPP ================= */
 
 .whatsapp {
   position: fixed;
@@ -214,15 +220,29 @@ footer {
   border-radius: 50%;
   font-size: 22px;
   text-decoration: none;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
 
+/* ================= RESPONSIVO ================= */
+
 @media(max-width:768px){
-  header h1{
-    font-size: 2.2rem;
+
+  nav {
+    padding: 15px 20px;
   }
+
+  nav ul {
+    display: none; /* esconde menu no celular */
+  }
+
+  section {
+    padding: 60px 20px;
+  }
+
 }
 
 </style>
+
 </head>
 <body>
 
@@ -319,3 +339,4 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+

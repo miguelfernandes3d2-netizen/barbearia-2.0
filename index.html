@@ -6,243 +6,235 @@
 <title>Barbearia Elite</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
 }
 
-body {
-  background: #0f0f0f;
-  color: #fff;
+body{
+  background:#0f0f0f;
+  color:#fff;
+  scroll-behavior:smooth;
 }
 
-/* ================= NAVBAR ================= */
-
-nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background: rgba(0,0,0,0.95);
-  padding: 15px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(0,0,0,0.95);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  z-index:1000;
 }
 
-nav h2 {
-  color: #c59d5f;
+nav h2{
+  color:#c59d5f;
+  font-weight:700;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:25px;
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 500;
-  transition: 0.3s;
+nav ul li a{
+  text-decoration:none;
+  color:#fff;
+  font-weight:500;
+  transition:0.3s;
 }
 
-nav ul li a:hover {
-  color: #c59d5f;
+nav ul li a:hover{
+  color:#c59d5f;
 }
 
-/* ================= HERO ================= */
-
-header {
-  min-height: 100vh;
+/* HERO */
+header{
+  min-height:100vh;
   background:
-    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-    url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 120px 20px 60px; /* espaço pra navbar */
+  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+  url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:120px 20px 60px;
 }
 
-header h1 {
-  font-size: clamp(28px, 6vw, 56px);
-  letter-spacing: 3px;
-  text-transform: uppercase;
+header h1{
+  font-size:clamp(28px,6vw,56px);
+  letter-spacing:3px;
+  text-transform:uppercase;
 }
 
-header p {
-  margin-top: 15px;
-  color: #ccc;
-  max-width: 500px;
+header p{
+  margin-top:15px;
+  color:#ccc;
+  max-width:500px;
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 12px 28px;
-  background: #c59d5f;
-  color: #000;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:12px 28px;
+  background:#c59d5f;
+  color:#000;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
 }
 
-.btn:hover {
-  background: #e0b76d;
-  transform: scale(1.05);
+.btn:hover{
+  background:#e0b76d;
+  transform:scale(1.05);
 }
 
-/* ================= SECTIONS ================= */
-
-section {
-  padding: 80px 20px;
-  max-width: 1100px;
-  margin: auto;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s ease;
-  scroll-margin-top: 100px;
-}
+/* SECTIONS */
+section{
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+  scroll-margin-top:100px;
 }
 
-section.show {
-  opacity: 1;
-  transform: translateY(0);
+h2{
+  text-align:center;
+  margin-bottom:40px;
+  color:#c59d5f;
+  font-size:clamp(22px,4vw,32px);
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  color: #c59d5f;
-  font-size: clamp(22px, 4vw, 32px);
+/* SOBRE */
+.sobre p{
+  text-align:center;
+  max-width:700px;
+  margin:auto;
+  color:#ccc;
 }
 
-/* ================= SOBRE ================= */
-
-.sobre p {
-  text-align: center;
-  max-width: 700px;
-  margin: auto;
-  color: #ccc;
+/* SERVIÇOS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
 }
 
-/* ================= SERVIÇOS ================= */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 20px;
+.card{
+  background:#181818;
+  padding:30px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 5px 20px rgba(0,0,0,0.4);
+  transition:0.3s;
 }
 
-.card {
-  background: #181818;
-  padding: 30px;
-  border-radius: 16px;
-  text-align: center;
-  transition: 0.3s;
+@media (hover:hover){
+  .card:hover{
+    transform:translateY(-8px);
+  }
 }
 
-.card:hover {
-  transform: translateY(-10px);
+.card h3{
+  margin-bottom:10px;
 }
 
-.card h3 {
-  margin-bottom: 10px;
+.card p{
+  color:#ccc;
 }
 
-.card p {
-  color: #ccc;
+/* GALERIA */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
 }
 
-/* ================= GALERIA ================= */
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 15px;
+.gallery img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:12px;
+  transition:0.3s;
 }
 
-.gallery img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 12px;
-  transition: 0.3s;
+@media (hover:hover){
+  .gallery img:hover{
+    transform:scale(1.05);
+  }
 }
 
-.gallery img:hover {
-  transform: scale(1.05);
+/* DEPOIMENTOS */
+.depoimento{
+  background:#181818;
+  padding:25px;
+  border-radius:12px;
+  text-align:center;
+  box-shadow:0 5px 20px rgba(0,0,0,0.4);
 }
 
-/* ================= DEPOIMENTOS ================= */
-
-.depoimento {
-  background: #181818;
-  padding: 25px;
-  border-radius: 12px;
-  text-align: center;
+/* CONTATO */
+.contato{
+  text-align:center;
 }
 
-/* ================= CONTATO ================= */
-
-.contato {
-  text-align: center;
+/* FOOTER */
+footer{
+  background:#111;
+  text-align:center;
+  padding:30px;
+  color:#aaa;
 }
 
-/* ================= FOOTER ================= */
-
-footer {
-  background: #111;
-  text-align: center;
-  padding: 30px;
-  color: #aaa;
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  padding:15px 18px;
+  border-radius:50%;
+  font-size:22px;
+  text-decoration:none;
+  box-shadow:0 0 15px rgba(0,0,0,0.4);
 }
 
-/* ================= BOTÃO WHATSAPP ================= */
-
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: #fff;
-  padding: 15px 18px;
-  border-radius: 50%;
-  font-size: 22px;
-  text-decoration: none;
-  box-shadow: 0 0 15px rgba(0,0,0,0.4);
-}
-
-/* ================= RESPONSIVO ================= */
-
+/* RESPONSIVO */
 @media(max-width:768px){
 
-  nav {
-    padding: 15px 20px;
+  nav{
+    padding:15px 20px;
   }
 
-  nav ul {
-    display: none; /* esconde menu no celular */
+  nav ul{
+    display:none;
   }
 
-  section {
-    padding: 60px 20px;
+  header{
+    padding:120px 20px 60px;
+  }
+
+  section{
+    padding:60px 20px;
   }
 
 }
 
 </style>
-
 </head>
 <body>
 
@@ -294,7 +286,6 @@ footer {
   </div>
 </section>
 
-
 <section>
   <h2>Depoimentos</h2>
   <div class="grid">
@@ -322,21 +313,5 @@ footer {
 
 <a href="https://wa.me/5599999999999" class="whatsapp" target="_blank">💬</a>
 
-<script>
-const sections = document.querySelectorAll("section");
-
-window.addEventListener("scroll", () => {
-  const trigger = window.innerHeight * 0.8;
-
-  sections.forEach(section => {
-    const top = section.getBoundingClientRect().top;
-    if(top < trigger){
-      section.classList.add("show");
-    }
-  });
-});
-</script>
-
 </body>
 </html>
-
